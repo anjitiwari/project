@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Banana Leaf Disease Detection</title>
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style/select_image.css')}}">
+
+</head>
+
+<body>
+  </br>
+</br></br></br>
+  <table width="1107" height="94" border="0">
+    <tr>
+      <td height="88"><marquee behavior='alternate' scrollamount='05'><p><strong><h1>CLASSIFICATION AND PREDICTION OF BANANA LEAF DISEASE</h1></strong></P><width="832" height="120" /></marquee></td>
+    </tr>
+  </table>
+<form enctype = "multipart/form-data" action="" method="post"  name="form1" id="form1" >
+  <table width="600" height="364" border="0" align="center">
+    <tr>
+      <td width="158" height="46"><h3 class="style4 style5">Select Image </h3></td>
+      <td colspan="2"><label>
+             <input type="file" name="file1" />
+      </label></td>
+    </tr>
+    <tr>
+      <td height="38">&nbsp;</td>
+      <td width="117"><input type="submit" name="Submit" value="Submit" /></td>
+    </tr>
+    <tr>
+      <td height="30">&nbsp;</td>
+      <!--<p style="color:black">  {{pred}}</p>-->
+      <td colspan="2"><h3 style="color:black">{{pred}}</h3></td>
+    </tr>
+    <tr>
+      <td height="148">&nbsp;</td>
+      {% if filename %}
+      <td colspan="2"> <img src="{{ url_for('send_file', filename=filename) }}" width="300" height="300"></td>
+      {% else %}
+      <td colspan="2">&nbsp;</td>
+      {% endif %}
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td colspan="2"></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td colspan="2"><label> </label></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td colspan="2"><a href="index.html">
+        <label></label>
+      </a></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

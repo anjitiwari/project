@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block content %}
+<html>
+<head>
+<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style/login.css')}}">
+	
+</head>
+<body>
+		
+  <div class="login-page">
+		<form class="login-form" action="" method="POST">
+                 {{ form.hidden_tag() }}
+                 <p style="color:wheat">   {{ form.email.label(class="form-control-label") }}</p>
+                 {% if form.email.errors %}
+                     {{ form.email(class="form-control form-control-lg is-invalid") }}
+                     <div class="invalid-feedback">
+                         {% for error in form.email.errors %}
+                             <span>{{ error }}</span>
+                         {% endfor %}
+                     </div>
+                 {% else %}
+                     {{ form.email(class="form-control form-control-lg") }}
+                 {% endif %}
+                    </br>
+    <p style="color:wheat">   {{ form.password.label(class="form-control-label") }}  </p>
+    {% if form.password.errors %}
+        {{ form.password(class="form-control form-control-lg is-invalid") }}
+        <div class="invalid-feedback">
+            {% for error in form.password.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+    {% else %}
+        {{ form.password(class="form-control form-control-lg") }}
+    {% endif %}
+		
+    
+    <div class="form-check">
+            {{ form.remember(class="form-check-input") }}
+            <p style="color:wheat">    {{ form.remember.label(class="form-check-label") }} </p>
+        </div>
+		<button style="text-align: center">login</button>
+		
+   
+</div>
+
+
+		<p class="message" style="color:white;text-align: center"> Not Registered? <a href="/registration">Register</a></p>
+    
+
+		</div>
+		
+</body>
+</html>
+{% endblock %}
+
+

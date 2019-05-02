@@ -1,0 +1,68 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+<html>
+<head>
+	<title>Contact Form </title>
+			<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style/que.css')}}">
+</head>
+<body>
+	<div class="contact-title">
+		<h1>Hello</h1>
+	</br>
+		<h2>We are always ready to serve you!</h2>
+	</div>
+	<form action="" method="post"  >
+	
+		{{ form.hidden_tag() }}
+		<p style="color:wheat"> {{ form.email.label(class="form-control-label") }}</p>
+		{% if form.email.errors %}
+			{{ form.email(class="form-control form-control-lg is-invalid") }}
+			<div class="invalid-feedback">
+				{% for error in form.email.errors %}
+					<span>{{ error }}</span>
+				{% endfor %}
+			</div>
+		{% else %}
+			{{ form.email(class="form-control form-control-lg") }}
+		{% endif %}
+		</br>
+		<p style="color:wheat">{{ form.username.label(class="form-control-label") }}</p>
+              {% if form.username.errors %}
+                        {{ form.username(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.username.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.username(class="form-control form-control-lg") }}
+                    {% endif %}
+			
+					</br>
+					<p style="color:wheat">{{ form.message.label(class="form-control-label") }}</p>
+
+                    {% if form.message.errors %}
+                        {{ form.message(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.meessage.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.message(class="form-control form-control-lg") }}
+                    {% endif %}
+					</br>
+					<div class="form-group">
+						<p	style="color:blue">	{{ form.submit(class="btn btn-outline-info") }} </p>
+					</div>
+			
+		</form>
+	
+	
+	
+	
+</body>
+</html>
+{% endblock %}

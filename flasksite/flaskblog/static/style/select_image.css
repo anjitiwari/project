@@ -1,0 +1,12 @@
+body {
+	
+	background: url(/static/images/images2.jpg);
+	background-repeat: no-repeat;
+	background-size:cover;
+	background-position: 50% 50%;
+   }
+.style4 {
+	font-size: 24px;
+	color: #6600FF;
+}
+.style5 {color: #FF0000}
